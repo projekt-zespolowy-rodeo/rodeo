@@ -1,9 +1,20 @@
 {% extends "rodeo_app/base.html" %}
 
 {% block content %}
-    {% for game in games %}
-        <h1>{{ game.title }}</h1>
-        <p>{{ game.description }}</p>
-    {% endfor %}
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+        {% for game in games %}
+
+            <div class="col">
+                <div class="card mt-4 h-100">
+                <h5 class="card-header">{{ game.genere }}</h5>
+                <div class="card-body">
+                    <h5 class="card-title">{{ game.title }}</h5>
+                    <p class="card-text">{{ game.description }}</p>
+                    <a href="#" class="btn btn-primary">Zagraj</a>
+                </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
 {% endblock content %}
 

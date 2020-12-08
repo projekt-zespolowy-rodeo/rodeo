@@ -9,7 +9,7 @@
     {% if title %}
         <title>Gra - {{ game.title }}</title>
     {% else %}
-        <title>Gra</title>
+        <title>Rodeo</title>
     {% endif %}
 </head>
 <body>
@@ -23,16 +23,16 @@
               <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    <a class="nav-link" aria-current="page" href="{% url 'rodeo-home' %}">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="/about">About</a>
+                    <a class="nav-link" href="{% url 'rodeo-about' %}">About</a>
                   </li>
                 </ul>
                 <form class="d-flex">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                          <a class="nav-link active" aria-current="page" href="#">Sign in</a>
+                          <a class="nav-link" aria-current="page" href="#">Sign in</a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link" href="#">Sign up</a>
