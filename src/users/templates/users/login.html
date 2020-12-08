@@ -6,12 +6,12 @@
                 {% csrf_token %}
                 <div class="card form-group mt-5">
                     <div class="card-body">
-                    <h5 class="card-title">Join today</h5>
+                    <h5 class="card-title">Log In</h5>
                         
                         {{ form|crispy }}
-                        <button class="btn btn-outline-info mt-2" type="submit">Sign up</button>
+                        <button class="btn btn-outline-info mt-2" type="submit">Log in</button>
                         <div class="pt-3">
-                            <small class="text-muted">Already Have An Account?<a class="ml-2" href="{% url 'rodeo-login' %}">Sign In</a></small>
+                            <small class="text-muted">Need an account? <a class="ml-2" href="{% url 'rodeo-register' %}">Sign Up</a></small>
                         </div>
                    
                     </div>
