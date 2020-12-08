@@ -21,6 +21,7 @@ from users import views as user_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('register/', user_views.register, name='rodeo-register'),
+    path('profile/', user_views.profile, name='rodeo-profile'),
     path('login/', auth_views.LoginView.as_view(template_name='users/login.html'), name='rodeo-login'),
     path('logout/', auth_views.LogoutView.as_view(template_name='rodeo_app/home.html'), name='rodeo-logout'),
     path('', include('rodeo_app.urls')),
