@@ -1,0 +1,23 @@
+{% extends "rodeo_app/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+        <div class="content-section">
+            <form method="POST">
+                {% csrf_token %}
+                <div class="card form-group mt-5">
+                    <div class="card-body">
+                    <h5 class="card-title">Join today</h5>
+                        
+                        {{ form|crispy }}
+                        <button class="btn btn-outline-info mt-2" type="submit">Sign up</button>
+                        <div class="pt-3">
+                            <small class="text-muted">Already Have An Account?<a class="ml-2" href="#">Sign In</a></small>
+                        </div>
+                   
+                    </div>
+                </div>
+            </form>
+            
+        </div> 
+{% endblock content %}
+
