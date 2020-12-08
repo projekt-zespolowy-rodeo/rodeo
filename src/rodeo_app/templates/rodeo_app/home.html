@@ -1,6 +1,7 @@
 {% extends "rodeo_app/base.html" %}
-
+{% load static %}
 {% block content %}
+    {% if user.is_authenticated %}
     <div class="row row-cols-1 row-cols-md-2 g-4">
         {% for game in games %}
 
@@ -16,5 +17,13 @@
             </div>
         {% endfor %}
     </div>
+    {% else %}
+        <div class="pt-5">
+            <img src="{% static 'rodeo_app/rodeo.svg' %}" class="mx-auto d-block img-fluid" alt="Rodeo icon">
+            <h1 class="text-center">You have to be logged in to play games</h1>
+            <div style="display: none;">Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+
+        </div>
+    {% endif %}
 {% endblock content %}
 
