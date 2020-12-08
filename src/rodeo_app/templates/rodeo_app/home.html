@@ -1,0 +1,9 @@
+{% extends "rodeo_app/base.html" %}
+
+{% block content %}
+    {% for game in games %}
+        <h1>{{ game.title }}</h1>
+        <p>{{ game.description }}</p>
+    {% endfor %}
+{% endblock content %}
+

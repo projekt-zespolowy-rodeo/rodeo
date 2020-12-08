@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'rodeo_app.apps.RodeoAppConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
