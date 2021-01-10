@@ -1,0 +1,13 @@
+body{
+    background-color:aquamarine;
+}
+ul{
+    list-style-type: none;
+}
+#canvas{
+    border:solid;
+    float: left;
+}
+#chat{
+    margin-left: 650px;
+}
