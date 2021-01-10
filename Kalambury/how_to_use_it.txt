@@ -1,0 +1,5 @@
+1. Install node js
+2. Get to server folder
+3. Write in console " npm start "
+4. Go to url: localhost:9999
+5. If you encounter any problem do not hesitate to call me :)
