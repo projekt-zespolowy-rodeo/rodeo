@@ -1,21 +1,62 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
-    <title>Kalambury</title>
-    <link href="/styles/style.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/42fe297fec.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    <div class= "main">
-        <canvas id="canvas" height="500" width="500"></canvas>
-    <div id=chat>
-        <ul id="wydarzenie"></ul>
-        <form id="form">
-            <button id="przycisk">Enter</button>
-            <input id="napis" autocomplete="off" title="napis"/>
-        </form>
+    <!-- Navbar section -->
+    <nav class="navbar">
+        <a href="index.html" class="navbar__logo">
+            <img src="img/logo7.png" width="140" height="40">
+        </a>
+        <input type="checkbox" class="menu-btn" id="menu-btn">
+        <label for="menu-btn" class="menu-icon">
+            <span class="menu-icon__line"></span>
+        </label>
+        <ul class="navbar__menu">
+            <li class="nav-link"><a href="#" class="navbar__menu--links">Gry</a></li>
+            <li class="nav-link"><a href="#" class="navbar__menu--links">Kategorie</a></li>
+            <li class="nav-link"><a href="#" class="navbar__menu--links">Szukaj</a></li>
+            <li class="nav-link"><a href="login.html" class="navbar__menu--btn" id="button">Zaloguj się</a></li>
+    </nav>
+
+    <!--Hero section-->
+    <div class="hero">
+        <div class="hero__container">
+            <div class="hero__container--left">
+                <h1>Lorem ipsum</h1>
+                <p>Lorem ipsum dolor sit amet.</p>
+                <button class="hero__container--btn">
+                    <a href="register.html">Załóż konto</a>
+                </button>
+            </div>
+            <div class="hero__container--right">
+                <img src="" alt="" class="hero__container--img">
+            </div>
+        </div>
     </div>
+
+    <!--Games Section-->
+    <div class="games">
+        <div class="game"><a href="login.html"><img src="img/pictionary.png" width="450" height="250">
+            <div class="details">
+                <span class="title">Kalambury</span>
+                <span class="info">zagraj</span>
+            </div>
+        </a></div>
+        <div class="game"><img src="img/black.jpg" width="450" height="250"></div>
+        <div class="game"><img src="img/black.jpg" width="450" height="250"></div>
+        <div class="game"><img src="img/black.jpg" width="450" height="250"></div>
+        <div class="game"><img src="img/black.jpg" width="450" height="250"></div>
+        <div class="game"><img src="img/black.jpg" width="450" height="250"></div>
     </div>
-    <script src="http://127.168.0.20:9999/socket.io/socket.io.js"></script>
-    <script src="src/client.js"></script>
+
+    <script src="main.js"></script>
+    
+
 </body>
 </html>

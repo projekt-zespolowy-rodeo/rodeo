@@ -1,0 +1,147 @@
+@import "_colors";
+@import "_media-queries";
+@import "_navbar";
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Proxima Nova';
+}
+
+.game {
+    background-color: $light;
+
+    &__container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        height: 65vh;
+        z-index: 1;
+        width: 100%;
+        max-width: 1500px;
+        padding-right: 0px;
+        padding-left: 0px;
+        padding-top: 50px;
+
+        @include tablet {
+            grid-template-columns: 1fr;
+            height: 100%;
+        }
+
+        &--left {
+            width: 100%;
+            grid-column: 1 / span 2;
+            line-height: 1.2;
+            background-color: $light;
+
+            @include tablet {
+                padding: 9rem 0;
+            }
+
+            @include mobile {
+                line-height: 1.5;
+            }
+
+            #canvas {
+                border:1px solid $lightgray;
+                height: 600px;
+                width: 950px;
+                margin-top: 50px;
+                margin-left: 15px;
+
+                @include mobile {
+                    
+                }
+            }
+        }
+
+
+            &--right {
+                //text-align: center;
+
+                .chatbox {
+                    width: 100%;
+                    //min-width: 100px;
+                    padding-top: 0px;
+                    //height: 200px;
+                    background-color: #eee;
+
+                    #chat {
+                        margin-top: 45px;
+                        padding: 0px;
+                        width: 100%;
+                        height: 600px;
+                        font-size: 14px;
+                        background: #eee;
+                        overflow-x: hidden;
+                        overflow-y: scroll;
+
+                        &::-webkit-scrollbar{
+                            width: 10px;
+                        }
+
+                        &::-webkit-scrollbar-thumb{
+                            border-radius: 5px;
+                            background-color: $red;
+                        }
+
+                        ul {
+                            margin-bottom: 10px;
+                            list-style: none;
+
+                            & li {
+                                width: 100%;
+                                padding: 15px;
+                                margin: 0;
+                                color: $lighterdark;
+                                //border-radius: 10px;
+
+                                &:nth-child(odd) {
+                                    background: rgba($lightgray, 0.3);
+                                }
+                                &:nth-child(even) {
+                                    background: rgba($red, 0.1);
+                                }
+
+                            }
+                        }
+
+                        #form {
+                            margin-top: 500px;
+                            display: flex;
+                            align-items: flex-start;
+
+                            #napis{
+                                background: $light;
+                                margin-left: 10px;
+                                margin-bottom: 0px;
+                                width: 80%;
+                                height: 50px;
+                                border: 2px solid #eee;
+                                border-radius: 3px;
+                                resize: none;
+                                padding: 10px;
+                                color: $dark;
+                                font-size: 15px;
+                            }
+
+                            #przycisk{
+                                background-color: $red;
+                                padding: 10px 35px;
+                                font-size: 18px;
+                                color: $light;
+                                border: none;
+                                margin: 0 10px;
+                                border-radius: 3px;
+                            }
+                        }
+
+                    }
+                    
+                }
+            }
+        }
+    }

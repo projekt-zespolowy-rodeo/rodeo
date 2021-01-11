@@ -41,18 +41,21 @@ const set_chosen_id=(id_from_emit,word)=>{
 }
 const send_drawing_coordinates =(element)=>{
     if(!can_paint || !my_turn) return;
-    x=element.clientX-12;
-    y=element.clientY-20;
-    sock.emit('turn_coordinates',{x,y,x,y});
+    x=element.clientX+100;
+    y=element.clientY-120;
+    w=element.clientX+100;
+    z=element.clientY-120;
+    sock.emit('turn_coordinates',{x,y,w,z});
 
 }
 
 const draw_from = (x,y,w,z)=>{
-    ctx.lineCap="round";
     ctx.lineWidth=5;
-    ctx.lineTo(x,y);
+    ctx.lineCap="round";
     ctx.beginPath();
+    ctx.lineTo(x,y);
     ctx.moveTo(w,z);
+    ctx.stroke();
 }
 
 (()=>{
