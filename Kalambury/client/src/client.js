@@ -5,7 +5,7 @@ const sock = io();
 let identification=0;
 let my_turn = false;
 const print = (text)=>{
-    const parent = document.querySelector('#wydarzenie');
+    const parent = document.querySelector('#message');
     const list_element = document.createElement('li');
     list_element.innerHTML = text
     parent.appendChild(list_element);
@@ -41,21 +41,20 @@ const set_chosen_id=(id_from_emit,word)=>{
 }
 const send_drawing_coordinates =(element)=>{
     if(!can_paint || !my_turn) return;
-	//change it to adjust to frontend
-    x=element.clientX+100;
-    y=element.clientY-120;
+    x=element.clientX-25;
+    y=element.clientY-100;
     sock.emit('turn_coordinates',{x,y,x,y});
 
 }
 
 const draw_from = (x,y,w,z)=>{
-	let canvas = document.querySelector('#canvas');
-	let ctx = canvas.getContext('2d');
-    ctx.lineWidth=7;
+    let canvas = document.querySelector('#canvas');
+    let ctx = canvas.getContext('2d');
+    ctx.lineWidth=8;
     ctx.lineCap="round";
-	ctx.lineTo(x,y);
-	ctx.stroke();
-    ctx.beginPath(); 
+    ctx.lineTo(x,y);
+    ctx.stroke();
+    ctx.beginPath();
     ctx.moveTo(x,y);
 }
 

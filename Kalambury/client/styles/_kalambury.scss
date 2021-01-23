@@ -24,7 +24,7 @@
         max-width: 1500px;
         padding-right: 0px;
         padding-left: 0px;
-        padding-top: 50px;
+        padding-top: 30px;
 
         @include tablet {
             grid-template-columns: 1fr;
@@ -47,8 +47,8 @@
 
             #canvas {
                 border:1px solid $lightgray;
-                height: 600px;
-                width: 950px;
+                //height: 600px;
+                //width: 950px;
                 margin-top: 50px;
                 margin-left: 15px;
 
@@ -65,16 +65,16 @@
                 .chatbox {
                     width: 100%;
                     //min-width: 100px;
-                    padding-top: 0px;
+                    padding-top: 70px;
                     //height: 200px;
                     background-color: #eee;
 
-                    #chat {
-                        margin-top: 45px;
-                        padding: 0px;
+                    .chatlogs {
+                        padding: 10px;
                         width: 100%;
-                        height: 600px;
+                        height: 580px;
                         font-size: 14px;
+                        //height: 450px;
                         background: #eee;
                         overflow-x: hidden;
                         overflow-y: scroll;
@@ -88,38 +88,48 @@
                             background-color: $red;
                         }
 
-                        ul {
+                        & ul {
+                            display: flex;
+                            flex-flow: row wrap;
+                            align-items: flex-start;
                             margin-bottom: 10px;
                             list-style: none;
 
-                            & li {
-                                width: 100%;
+                            & li:nth-child(odd) {
+                                background: rgba($lightgray, 0.3);
                                 padding: 15px;
-                                margin: 0;
                                 color: $lighterdark;
-                                //border-radius: 10px;
+                                width: 100%;
+                                margin: 0;
+                            }
 
-                                &:nth-child(odd) {
-                                    background: rgba($lightgray, 0.3);
-                                }
-                                &:nth-child(even) {
-                                    background: rgba($red, 0.1);
-                                }
-
+                            & li:nth-child(even) {
+                                background: rgba($red, 0.1);
+                                padding: 15px;
+                                color: $lighterdark;
+                                width: 100%;
+                                margin: 0;
                             }
                         }
 
+                    }
+
+                    .chat-form {
+                        margin-top: 10px;
+                        //display: flex;
+                        //align-items: flex-start;
+
                         #form {
-                            margin-top: 500px;
                             display: flex;
                             align-items: flex-start;
 
-                            #napis{
+
+                            #napis {
                                 background: $light;
                                 margin-left: 10px;
-                                margin-bottom: 0px;
-                                width: 80%;
-                                height: 50px;
+                                margin-bottom: 10px;
+                                width: 76%;
+                                height: 45px;
                                 border: 2px solid #eee;
                                 border-radius: 3px;
                                 resize: none;
@@ -128,7 +138,7 @@
                                 font-size: 15px;
                             }
 
-                            #przycisk{
+                            #przycisk {
                                 background-color: $red;
                                 padding: 10px 35px;
                                 font-size: 18px;
@@ -138,10 +148,10 @@
                                 border-radius: 3px;
                             }
                         }
-
-                    }
                     
+                    }
                 }
             }
         }
     }
+
