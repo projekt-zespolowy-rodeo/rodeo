@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <title>Czat</title>
+    <link href="/styles/_chat.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navbar section -->
+    <nav class="navbar">
+        <a href="index.html" class="navbar__logo">
+            <img src="img/logo7.png" width="140" height="40">
+        </a>
+        <input type="checkbox" class="menu-btn" id="menu-btn">
+        <label for="menu-btn" class="menu-icon">
+            <span class="menu-icon__line"></span>
+        </label>
+        <ul class="navbar__menu">
+            <li class="nav-link"><a href="#" class="navbar__menu--links">Opuść czat</a></li>
+            <li class="nav-link"><a href="login.html" class="navbar__menu--btn" id="button">Moje konto</a></li>
+    </nav>
+
+    <!--Hero section-->
+    <div class="chatroom">
+        <div class="chatroom__box">
+            <div class="chatroom__box--container">
+                <div class="chatlogs--room" id="msg-con">
+                    <ul id="wydarzenie"></ul>
+                </div>
+                <div class="chat-form--room">
+                    <form id="form">
+                        <input id="napis" autocomplete="off" title="napis"/>
+                        <button id="przycisk">Wyślij</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--<div class="chatbox">
+        <div class="chatlogs">
+            <ul id="message"></ul>
+        </div>
+        <div class="chat-form">
+            <form id="form">
+                <input id="napis" autocomplete="off" title="napis"/>
+                <button id="przycisk">Enter</button>
+            </form>
+        </div>
+    </div>-->
+
+
+    <!--<div class="chatroom">
+        <div class= "chat-container">
+            <div id=chat>
+                <ul id="wydarzenie"></ul>
+                <form id="form">
+                    <button id="przycisk">Enter</button>
+                    <input id="napis" autocomplete="off" title="napis"/>
+                </form>
+            </div>
+        </div>
+    </div>-->
+    <script src="http://127.168.0.20:9999/socket.io/socket.io.js"></script>
+    <script src="src/client.js"></script>
+</body>
+</html>
