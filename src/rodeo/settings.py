@@ -131,3 +131,17 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 LOGIN_REDIRECT_URL = 'rodeo-home'
 
 LOGIN_URL = 'rodeo-login'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+'''
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'email address'
+EMAIL_HOST_PASSWORD = 'password'
+'''
+
+EMAIL_HOST = 'smtp.mailtrap.io'
+EMAIL_HOST_USER = 'c7a9d42aa16e3d'
+EMAIL_HOST_PASSWORD = '8e62143fa1b275'
+EMAIL_PORT = '2525'
