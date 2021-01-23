@@ -41,21 +41,22 @@ const set_chosen_id=(id_from_emit,word)=>{
 }
 const send_drawing_coordinates =(element)=>{
     if(!can_paint || !my_turn) return;
+	//change it to adjust to frontend
     x=element.clientX+100;
     y=element.clientY-120;
-    w=element.clientX+100;
-    z=element.clientY-120;
-    sock.emit('turn_coordinates',{x,y,w,z});
+    sock.emit('turn_coordinates',{x,y,x,y});
 
 }
 
 const draw_from = (x,y,w,z)=>{
-    ctx.lineWidth=5;
+	let canvas = document.querySelector('#canvas');
+	let ctx = canvas.getContext('2d');
+    ctx.lineWidth=7;
     ctx.lineCap="round";
-    ctx.beginPath();
-    ctx.lineTo(x,y);
-    ctx.moveTo(w,z);
-    ctx.stroke();
+	ctx.lineTo(x,y);
+	ctx.stroke();
+    ctx.beginPath(); 
+    ctx.moveTo(x,y);
 }
 
 (()=>{
