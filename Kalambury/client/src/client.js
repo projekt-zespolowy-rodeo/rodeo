@@ -4,6 +4,11 @@ let ctx = canvas.getContext('2d');
 const sock = io();
 let identification=0;
 let my_turn = false;
+document.getElementById('clear-button').onclick = ()=>{
+    if(my_turn == true){
+    sock.emit("clear","");
+    }
+}
 const print = (text)=>{
     const parent = document.querySelector('#message');
     const list_element = document.createElement('li');
@@ -58,6 +63,7 @@ const draw_from = (x,y,w,z)=>{
 }
 
 (()=>{
+    sock.on("clear",(message)=>{ctx.clearRect(0,0,900,600)});
     sock.on('chat_message',print);
     sock.on('id',(id)=>set_id(id));
     sock.on('turn_coordinates',({x,y,w,z})=>draw_from(x,y,w,z));

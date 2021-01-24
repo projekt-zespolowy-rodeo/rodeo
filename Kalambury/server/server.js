@@ -62,6 +62,7 @@ io.on('connection',(sock)=>{
     }
     sock.on('chat_guess',([text,id]) => check_if_correct_word(text,chosen_word,id))
     sock.on('turn_coordinates',({x,y,w,z}) => io.emit('turn_coordinates',{x,y,w,z}));
+    sock.on("clear",(message)=>io.emit("clear",""));
 });
 server.listen(9997,()=>{
     console.log("OK");
