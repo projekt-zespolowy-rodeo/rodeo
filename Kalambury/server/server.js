@@ -1,22 +1,36 @@
 const express  = require('express');
 const http = require('http');
 const socketio = require('socket.io');
+file = require('fs');
 const app = express();
 app.use(express.static(`${__dirname}/../client`));
 const server = http.createServer(app);
 const io = socketio(server);
+let starting_chosen_id = 0;
 let list_of_id = [];
 let id_to_start = 0;
 let chosen_id = 0;
 let chosen_word = "";
 let is_more_than_2 =false;
-let array_with_words = ["pies","kot","krowa","czajnik","gitara"];
+var array_with_words= file.readFileSync('words.txt','utf8').split(',');
+console.log(array_with_words);
 function check_if_correct_word(chat_message,word,id){
     console.log(chat_message+" - "+word);
     if(chosen_id == id) return;
     if(is_more_than_2){
     if(chat_message == word) {
-        io.emit('chat_message',"Tak");
+        if(starting_chosen_id == 0){
+            chosen_id =1;
+            starting_chosen_id = 1;
+        }
+        else{
+            chosen_id = 0;
+            starting_chosen_id = 0;
+        }
+        io.emit('winning',chosen_id);
+        chosen_word = array_with_words[Math.floor(Math.random()*array_with_words.length)]
+        io.emit('whose_turn',[chosen_id,chosen_word]);
+        is_more_than_2=true;
     }
     else{
         io.emit('chat_message',chat_message);

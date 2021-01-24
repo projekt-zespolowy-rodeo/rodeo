@@ -29,13 +29,13 @@ const set_id = (id)=>{
     identification = id;
 }
 const set_chosen_id=(id_from_emit,word)=>{
-    console.log(id_from_emit);
     if(identification == id_from_emit){
         my_turn= true;
         console.log(word);
-        print("Musisz narysowac: "+word);
+        print("You should draw: "+word);
     }
     else{
+        print("You are guessing");
         my_turn = false;
     }
 }
@@ -48,14 +48,13 @@ const send_drawing_coordinates =(element)=>{
 }
 
 const draw_from = (x,y,w,z)=>{
-    let canvas = document.querySelector('#canvas');
-    let ctx = canvas.getContext('2d');
     ctx.lineWidth=8;
     ctx.lineCap="round";
     ctx.lineTo(x,y);
     ctx.stroke();
     ctx.beginPath();
     ctx.moveTo(x,y);
+    ctx.beginPath();
 }
 
 (()=>{
@@ -63,6 +62,16 @@ const draw_from = (x,y,w,z)=>{
     sock.on('id',(id)=>set_id(id));
     sock.on('turn_coordinates',({x,y,w,z})=>draw_from(x,y,w,z));
     sock.on('whose_turn',([id_from_emit,chosen_word])=>set_chosen_id(id_from_emit,chosen_word));
+    sock.on('winning',(message) => {
+        // if you want to allert about whose turn is, uncomment this
+        //if(message != identification){
+        //    window.alert("You are guessing");
+        //}
+        //else{
+        //    window.alert("You will draw");
+        //}
+        ctx.clearRect(0,0,900,600);
+    });
     canvas.addEventListener("mousedown",start_drawing);
     canvas.addEventListener("mousemove",send_drawing_coordinates);
     canvas.addEventListener("mouseup",finish_drawing);
