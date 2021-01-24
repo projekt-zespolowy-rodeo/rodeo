@@ -1,0 +1,22 @@
+{% load static %}
+<nav class="navbar">
+    <a href="{% url 'rodeo-home' %}"" class="navbar__logo">
+        <img src="{% static 'rodeo_app/logo7.png' %}" width="140" height="40">
+    </a>
+    <input type="checkbox" class="menu-btn" id="menu-btn">
+    <label for="menu-btn" class="menu-icon">
+        <span class="menu-icon__line"></span>
+    </label>
+    <ul class="navbar__menu">
+        <li class="nav-link"><a href="{% url 'rodeo-home' %}" class="navbar__menu--links">Games</a></li>
+        <!-- <li class="nav-link"><a href="#" class="navbar__menu--links">Categories</a></li> -->
+        <li class="nav-link"><a href="http://localhost:9999" class="navbar__menu--links">Chat</a></li>
+        {% if user.is_authenticated %}
+        <li class="nav-link"><a href="{% url 'rodeo-profile' %}" class="navbar__menu--btn" id="button">Profile</a></li>
+        <li class="nav-link"><a href="{% url 'rodeo-logout' %}" class="navbar__menu--btn" id="button">Logout</a></li>
+        {% else %}
+        <li class="nav-link"><a href="{% url 'rodeo-login' %}" class="navbar__menu--btn" id="button">Sign in</a></li>
+        <li class="nav-link"><a href="{% url 'rodeo-register' %}" class="navbar__menu--btn" id="button">Sign up</a></li>
+        {% endif %}
+</nav>
+

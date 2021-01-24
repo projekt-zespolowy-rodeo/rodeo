@@ -6,6 +6,6 @@ class Game(models.Model):
     description = models.TextField()
     genre = models.TextField()
     image = models.ImageField(default='default.jpg', upload_to='images')
-
+    port = models.IntegerField()
     def __str__(self):
         return self.title

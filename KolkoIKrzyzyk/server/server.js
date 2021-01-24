@@ -133,6 +133,6 @@ io.on('connection',(sock)=>{
             whose_turn = 0;
         }});
 });
-server.listen(9998,()=>{
+server.listen(9996,()=>{
     console.log("OK");
 })

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <title>Kółko i krzyżyk</title>
+    <link href="styles/style.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="http://localhost:8000"  class="navbar__logo">
+            <img src="./img/logo7.png" width="140" height="40">
+        </a>
+        <input type="checkbox" class="menu-btn" id="menu-btn">
+        <label for="menu-btn" class="menu-icon">
+            <span class="menu-icon__line"></span>
+        </label>
+        <ul class="navbar__menu">
+            <li class="nav-link"><a href="http://localhost:8000" class="navbar__menu--links">Games</a></li>
+            <!-- <li class="nav-link"><a href="#" class="navbar__menu--links">Categories</a></li> -->
+            <li class="nav-link"><a href="http://localhost:9998" class="navbar__menu--links">Chat</a></li>
+            
+            <li class="nav-link"><a href="http://localhost:8000/profile" class="navbar__menu--btn" id="button">Profile</a></li>
+            <li class="nav-link"><a href="http://localhost:8000/%2F" class="navbar__menu--btn" id="button">Logout</a></li>
+            
+            
+           
+    </nav>
+
+    <div id="score"></div>
+    <canvas id="canvas" height="500" width="500"></canvas>
+    <script src="http://127.168.0.20:9996/socket.io/socket.io.js"></script>
+    <script src="src/client.js"></script>
+</body>
+</html>

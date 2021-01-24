@@ -25,7 +25,8 @@ urlpatterns = [
     path('register/', user_views.register, name='rodeo-register'),
     path('profile/', user_views.profile, name='rodeo-profile'),
     path('login/', auth_views.LoginView.as_view(template_name='users/login.html'), name='rodeo-login'),
-    path('logout/', auth_views.LogoutView.as_view(template_name='rodeo_app/home.html'), name='rodeo-logout'),
+    path('/', auth_views.LogoutView.as_view(template_name='users/register.html'), name='rodeo-logout'),
+    path('game.html/', auth_views.PasswordResetView.as_view(template_name='rodeo_app/game.html'), name='game'),
     
     path('password-reset/', auth_views.PasswordResetView.as_view(template_name='users/password_reset.html'), name='password_reset'),
     
