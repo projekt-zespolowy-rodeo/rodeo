@@ -215,6 +215,20 @@
   margin-left: 15px;
 }
 
+.game__container--left #clear #clear-button {
+  background-color: #A80006;
+  padding: 10px 35px;
+  font-size: 15px;
+  color: white;
+  border: none;
+  margin-left: 20px;
+  border-radius: 10px;
+}
+
+.game__container--left #clear #clear-button:hover {
+  background-color: red;
+}
+
 .game__container--right .chatbox {
   width: 100%;
   padding-top: 70px;

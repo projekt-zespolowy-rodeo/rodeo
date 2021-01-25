@@ -56,6 +56,22 @@
                     
                 }
             }
+			
+			#clear {
+                #clear-button {
+                    background-color: $red;
+                    padding: 10px 35px;
+                    font-size: 15px;
+                    color: $light;
+                    border: none;
+                    margin-left: 20px;
+                    border-radius: 10px;
+
+                    &:hover{
+                        background-color: red;
+                    }
+                }
+            }
         }
 
 
