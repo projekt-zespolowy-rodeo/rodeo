@@ -66,10 +66,10 @@ const board_fuctionality = (x,y,id,colour) => {
     var indexX = -1;
     var indexY= -1;
     for(let i=0;i<3;i++){
-        if(0+wX*i<x && x<wX+wX*i){
+        if(500+wX*i<x && x<500+wX+wX*i){
             indexX=i;
         }
-        if(0+wY*i<y && y<wY+wY*i){
+        if(140+wY*i<y && y<140+wY+wY*i){
             indexY=i;
             }
     }

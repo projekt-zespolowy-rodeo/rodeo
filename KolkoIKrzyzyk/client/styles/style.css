@@ -3,7 +3,7 @@
     border:solid;
 }
 body{
-    background-color:#5c5c5c;
+    background-color: white;
 }
 
 .navbar__logo, .navbar__menu {
@@ -387,5 +387,9 @@ body{
   .games .game:focus .info,
   .games .game:hover .info {
     transition-delay: 0.25s;
+  }
+
+  .ttt {
+    margin-left: 500px;
   }
   
