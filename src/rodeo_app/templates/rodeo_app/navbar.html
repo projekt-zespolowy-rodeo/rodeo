@@ -1,4 +1,20 @@
 {% load static %}
+<script src="http://localhost:9999/socket.io/socket.io.js"></script>    
+<script>
+
+    function sendLogin(){
+        var login = "{{user.username}}"
+        console.log(login);
+        var socket = io.connect('localhost',{port:9999});
+        socket.emit('login',{name: login});
+        event.target.port=9999;
+        //location.replace('http://localhost:9999/');
+        //window.location = "http://localhost:9999/";
+
+    }
+
+</script>
+
 <nav class="navbar">
     <a href="{% url 'rodeo-home' %}"" class="navbar__logo">
         <img src="{% static 'rodeo_app/logo7.png' %}" width="140" height="40">
@@ -10,7 +26,7 @@
     <ul class="navbar__menu">
         <li class="nav-link"><a href="{% url 'rodeo-home' %}" class="navbar__menu--links">Games</a></li>
         <!-- <li class="nav-link"><a href="#" class="navbar__menu--links">Categories</a></li> -->
-        <li class="nav-link"><a href="http://localhost:9999" class="navbar__menu--links">Chat</a></li>
+        <li class="nav-link"><a href="" onclick="sendLogin()" class="navbar__menu--links">Chat</a></li>
         {% if user.is_authenticated %}
         <li class="nav-link"><a href="{% url 'rodeo-profile' %}" class="navbar__menu--btn" id="button">Profile</a></li>
         <li class="nav-link"><a href="{% url 'rodeo-logout' %}" class="navbar__menu--btn" id="button">Logout</a></li>
