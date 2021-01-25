@@ -10,8 +10,8 @@
   <body class="bg-dark">
    
 <nav class="navbar">
-    <a href="{% url 'rodeo-home' %}"" class="navbar__logo">
-        <img src="{% static 'rodeo_app/logo7.png' %}" width="140" height="40">
+    <a href="{% url 'rodeo-home' %}" class="navbar__logo">
+       
     </a>
     <input type="checkbox" class="menu-btn" id="menu-btn">
     <label for="menu-btn" class="menu-icon">
@@ -21,18 +21,14 @@
         <li class="nav-link"><a href="{% url 'rodeo-home' %}" class="navbar__menu--links">Games</a></li>
         <!-- <li class="nav-link"><a href="#" class="navbar__menu--links">Categories</a></li> -->
         <li class="nav-link"><a href="http://localhost:9999" class="navbar__menu--links">Chat</a></li>
-        {% if user.is_authenticated %}
+
         <li class="nav-link"><a href="{% url 'rodeo-profile' %}" class="navbar__menu--btn" id="button">Profile</a></li>
         <li class="nav-link"><a href="{% url 'rodeo-logout' %}" class="navbar__menu--btn" id="button">Logout</a></li>
-        {% else %}
-        <li class="nav-link"><a href="{% url 'rodeo-login' %}" class="navbar__menu--btn" id="button">Sign in</a></li>
-        <li class="nav-link"><a href="{% url 'rodeo-register' %}" class="navbar__menu--btn" id="button">Sign up</a></li>
-        {% endif %}
+      
 </nav>
 
-
-  
-   <div class="container">
+  <div class="container">
+ 
       <h1>Punkty: <span id="score"></span></h1>
 
     <div class = "panel"></div>
@@ -40,42 +36,74 @@
     <br/>
     <br/>
     <div id = "again"></div>
-  </div>
+</div>
   <script>
     document.addEventListener('DOMContentLoaded', ()=>{
     const images =[
         {
         name: 'axe',
-        img:"{% static 'rodeo_app/axe.png' %}"
+        img:"{% static 'rodeo_app/axe.png' %} "
         },
         {
         name: 'sword',
-        img:"{% static 'rodeo_app/sword.png' %}"
+        img:"{% static 'rodeo_app/sword.png' %} "
         },
         {
         name: 'shield',
-        img:"{% static 'rodeo_app/shield.png' %}"
+        img:"{% static 'rodeo_app/shield.png' %} "
         },
         {
         name: 'pike',
-        img:"{% static 'rodeo_app/pike.png' %}"
+        img:"{% static 'rodeo_app/pike.png' %} "
         },
         {
         name: 'mace',
-        img:"{% static 'rodeo_app/mace.png' %}"
+        img:"{% static 'rodeo_app/mace.png' %} "
         },
         {
         name: 'dagger',
-        img:"{% static 'rodeo_app/dagger.png' %}"
+        img:"{% static 'rodeo_app/dagger.png' %} "
         },
         {
         name: 'crossbow',
-        img:"{% static 'rodeo_app/crossbow.png' %}"
+        img:"{% static 'rodeo_app/crossbow.png' %} "
         },
         {
         name: 'bow',
-        img:"{% static 'rodeo_app/bow.png' %}"
+        img:"{% static 'rodeo_app/bow.png' %} "
         },
+        {
+        name: 'axe',
+        img:"{% static 'rodeo_app/axe.png' %} "
+        },
+        {
+        name: 'sword',
+        img:"{% static 'rodeo_app/sword.png' %} "
+        },
+        {
+        name: 'shield',
+        img:"{% static 'rodeo_app/shield.png' %} "
+        },
+        {
+        name: 'pike',
+        img:"{% static 'rodeo_app/pike.png' %} "
+        },
+        {
+        name: 'mace',
+        img:"{% static 'rodeo_app/mace.png' %} "
+        },
+        {
+        name: 'dagger',
+        img:"{% static 'rodeo_app/dagger.png' %} "
+        },
+        {
+        name: 'crossbow',
+        img:"{% static 'rodeo_app/crossbow.png' %} "
+        },
+        {
+        name: 'bow',
+        img:"{% static 'rodeo_app/bow.png' %} "
+        }
         
     ]
 
@@ -91,7 +119,7 @@
     function create(){
         for(let i=0; i<images.length; i++){
             var image = document.createElement('img')
-            image.setAttribute('src', "{% static 'rodeo_app/blank.png' %}")
+            image.setAttribute('src', "{% static 'rodeo_app/blank.png' %} ")
             image.setAttribute('id', i)
             image.addEventListener('click', flip)
             panel.appendChild(image)
@@ -132,14 +160,14 @@
         const optionTwoId = imagesChosenNr[1]
         if(imagesChosen[0]===imagesChosen[1]){
             alert('Znalazłeś parę')
-            img[optionOneId].setAttribute('src', "{% static 'rodeo_app/empty.png' %}")
+            img[optionOneId].setAttribute('src', "{% static 'rodeo_app/empty.png' %} ")
             img[optionOneId].removeEventListener('click', flip)
-            img[optionTwoId].setAttribute('src', "{% static 'rodeo_app/empty.png' %}")
+            img[optionTwoId].setAttribute('src', "{% static 'rodeo_app/empty.png' %} ")
             img[optionTwoId].removeEventListener('click', flip)
             imagesMatched.push(imagesChosen[0])
         }else{
-            img[optionOneId].setAttribute('src', "{% static 'rodeo_app/blank.png' %}")
-            img[optionTwoId].setAttribute('src', "{% static 'rodeo_app/blank.png' %}")
+            img[optionOneId].setAttribute('src', "{% static 'rodeo_app/blank.png' %} ")
+            img[optionTwoId].setAttribute('src', "{% static 'rodeo_app/blank.png' %} ")
             alert('Nie udało się')
         }
         imagesChosen.splice(0, imagesChosen.length)

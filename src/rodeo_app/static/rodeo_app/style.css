@@ -381,4 +381,10 @@
   .games .game:hover .info {
     transition-delay: 0.25s;
   }
-  
+  .panel {
+    display: flex;
+    flex-wrap: wrap;
+    height: 400px;
+    width: 400px;
+
+}
