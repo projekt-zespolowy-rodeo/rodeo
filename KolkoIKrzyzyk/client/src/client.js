@@ -6,6 +6,7 @@ let wY=Math.floor(500/3);
 var identyfication=-1;
 var colour ="";
 let point = 0;
+let oponents_point = 0;
 const click_on_the_box = (element)=>{
     
     x=element.clientX;
@@ -13,7 +14,7 @@ const click_on_the_box = (element)=>{
     sock.emit("coordinates_pointed",[x,y,identyfication,colour]);
 }
 const points= ()=>{
-    document.getElementById('score').innerHTML = "Points: "+point;
+    document.getElementById('score').innerHTML = "Your points: "+point+"&nbsp;&nbsp;&nbsp; Oponent's points: "+oponents_point;
 }
 const click_on_the_box_print = (x,y,col)=>{
     indexX=-1;
@@ -69,6 +70,8 @@ const setId = (id,col) => {
         window.alert("You win !!!");
         }
         else if(id != -1){
+            oponents_point ++;
+            points();
             window.alert("You lose !!!");
         }
         else{
