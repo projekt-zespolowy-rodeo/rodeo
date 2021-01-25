@@ -1,1 +1,1 @@
-dog,cat,crocodile,giraffe,window,house,spider,fridge,cactus,guitar,wall,phone
+dog,cat,crocodile,giraffe,window,house,spider,fridge,cactus,guitar,wall,phone,water,sea,book,pillow,tea,coffee,chair,python,shop,pen,street,sun,equation,pizza,plate,airplane,bike,mountain
